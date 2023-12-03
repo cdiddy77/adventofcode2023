@@ -1,0 +1,82 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+    "react-native/react-native": true,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+    requireConfigFile: false,
+  },
+  plugins: [
+    "react",
+    "react-native",
+    "@typescript-eslint",
+    "sort-imports-es6-autofix",
+  ],
+  rules: {
+    "no-console": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    curly: ["error", "all"],
+    "object-literal-sort-keys": ["off"],
+    "member-ordering": ["off"],
+    // "member-access": ["error", "no-public"],
+    "array-type": ["off"],
+    // "jsx-ban-props": ["error", []],
+    // https://github.com/facebook/create-react-app/issues/4801#issuecomment-406892063
+    "jsx-no-lambda": ["off"],
+    // encoding: ["error"],
+    "no-submodule-imports": ["off"],
+    "no-implicit-dependencies": ["off"],
+    "prefer-conditional-expression": ["off"],
+    "no-object-literal-type-assertion": ["off"],
+    "no-empty": ["off"],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["off"],
+    "@typescript-eslint/explicit-module-boundary-types": ["off"],
+    "variable-name": ["off"],
+    "react/prop-types": ["off"],
+    "react/no-unknown-property": ["error", { ignore: ["sx"] }],
+    "react-native/no-unused-styles": 1,
+    "react-native/split-platform-components": 0,
+    "react-native/no-inline-styles": 0,
+    "react-native/no-color-literals": 0,
+    "react-native/no-raw-text": 0,
+    "react-native/no-single-element-style-arrays": 1,
+    "@typescript-eslint/no-empty-interface": ["off"],
+    // I would like to turn this back on.
+    "react/react-in-jsx-scope": "off",
+    // "sort-imports-es6-autofix/sort-imports-es6": [
+    //   "warn",
+    //   {
+    //     ignoreCase: false,
+    //     ignoreMemberSort: false,
+    //     memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+    //   },
+    // ],
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        additionalHooks:
+          "(useAnimatedStyle|useDerivedValue|useAsync|useAsyncCallback)",
+      },
+    ],
+  },
+  settings: { react: { version: "detect" } },
+};
